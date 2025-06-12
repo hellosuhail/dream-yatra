@@ -10,7 +10,7 @@ const Card = ({ title }) => {
   return (
     <div className="px-4 py-6">
       <div className="mb-4">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 text-center">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center">
           {title}
         </h1>
       </div>
