@@ -9,15 +9,18 @@ import Bus from "./components/Routes/Bus";
 import Cruise from "./components/Routes/Cruise";
 import Traveldeals from "./components/Routes/Traveldeals";
 import AuthModal from "./components/Login";
+import FlightList from "./components/FlightList";
+import { store } from "./store/store";
+import { Provider } from "react-redux";
+import FlightDetail from "./components/FlightDetail";
 
 
 function Layout() {
   const location = useLocation();
-  const hideNavbarOnRoutes = ["/deals"];
-  const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
-
-
-  
+  const hideNavbarOnRoutes = ["/deals", "/flight-list/:flightId","/flight-list"];
+   const shouldHideNavbar =
+    location.pathname.startsWith("/flight-list/") ||
+    hideNavbarOnRoutes.includes(location.pathname);
   return (
     <>
       {!shouldHideNavbar && <Navbar />}
@@ -29,6 +32,8 @@ function Layout() {
         <Route path="/bus" element={<Bus />} />
         <Route path="/cruise" element={<Cruise />} />
         <Route path="/login" element={<AuthModal/>}/>
+        <Route path="/flight-list" element={<FlightList/>}/>
+        <Route path="/flight-list/:flightId" element={<FlightDetail />} />
       </Routes>
       <Footer />
     </>
@@ -37,9 +42,11 @@ function Layout() {
 
 function App() {
   return (
-    <Router>
+     <Provider store={store}>
+      <Router>
       <Layout />
-    </Router>
+      </Router>
+    </Provider>
   );
 }
 

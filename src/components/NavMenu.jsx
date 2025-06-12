@@ -36,7 +36,7 @@ const NavMenu = () => {
               className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-transparent rounded-box w-52 z-10"
             >
               <li>
-                <Link to="/">Flight</Link>
+                <Link to="/flight-list">Flight </Link>
               </li>
               <li>
                 <Link to="/pakages"></Link>
@@ -55,13 +55,13 @@ const NavMenu = () => {
               </li>
             </ul>
           </div>
-<div className="md:fixed relative rounded-3xl  bg-red-500 text-white text-2xl px-5 py-2">!</div>
+
           {/* Logo */}
-          <img
+       <Link to="/">  <img
             src="/logo/logo.png"
             className="w-20 md:w-26 h-auto"
             alt="logo"
-          />
+          /> </Link> 
         </div>
 
         {/* Right: Action Buttons */}

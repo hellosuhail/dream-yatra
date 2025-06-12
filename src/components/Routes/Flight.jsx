@@ -36,6 +36,7 @@ const search = useMemo(() => (
       type="date"
       className="w-full md:w-44 h-16 px-2 border border-gray-300 rounded"
     />
+    
     <button className="w-full md:w-48 h-16 text-black rounded">
       1 Traveller(s) | Economy
     </button>

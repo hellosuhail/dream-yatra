@@ -1,5 +1,4 @@
 import React from "react";
-
 import Banner from "./Banner";
 import NavMenu from "./NavMenu";
 
@@ -21,7 +20,7 @@ const Navbar = () => {
           </div>
 
           {/* Banner Component */}
-          <div className="mt-8">
+          <div className="mt-8 mb-7 ">
             <Banner />
           </div>
         </div>
