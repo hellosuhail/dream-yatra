@@ -45,6 +45,8 @@ const FlightDetails = () => {
     );
   }
 
+
+  
   return (
     <div
       className="p-4 sm:p-6 md:p-8 lg:p-12 min-h-screen relative bg-gray-100 flex items-center justify-center"
