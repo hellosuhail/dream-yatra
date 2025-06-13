@@ -50,7 +50,7 @@ const search = useMemo(() => (
         <MidNav initalData={MidNavData} />
       </div>
       <div className="flex justify-center">
-        <Carousel />
+        <Carousel img="/Images/Napal.jpg"/>
         </div>
         <Card title="India Tour Packages - Dekho My India"/>
         <HolidayPakages/>

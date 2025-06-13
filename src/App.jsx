@@ -13,11 +13,12 @@ import GiftCard from "./components/GiftCard";
 import MyAccoundDetails from "./components/MyAccoundDetails";
 import OffersDeals from "./components/OffersDeals";
 import OfferNoFees from "./components/OfferNoFees";
+import ContactUs from "./components/ContactUs";
 
 
 function Layout() {
   const location = useLocation();
-  const hideNavbarOnRoutes = ["/deals","/giftcard","/offers&deals","/nofees","/makepayment"];
+  const hideNavbarOnRoutes = ["/deals","/giftcard","/offers&deals","/nofees","/makepayment","/contact"];
   const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
 
 
@@ -37,6 +38,7 @@ function Layout() {
         <Route path="/bankaccound" element={<MyAccoundDetails/>} />
         <Route path="/offers&deals" element={<OffersDeals/>} />
         <Route path="/nofees" element={<OfferNoFees/>} />
+        <Route path="/contact" element={<ContactUs/>} />
       </Routes>
       <Footer />
     </>

@@ -39,7 +39,10 @@ const MyAccountDetails = () => {
       </div>
       
             <div className="w-full m-6 flex justify-start">
-        <Link to='/' className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800">
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800"
+        >
           <GoArrowLeft className="text-xl" />
           Back
         </Link>

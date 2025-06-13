@@ -6,105 +6,117 @@ import { FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import AuthModal from "./Login";
 const NavMenu = () => {
-   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef(null);
 
   // Close sidebar on outside click
-  
-    const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    }
 
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsOpen(false);
     }
+  };
 
- 
-  const menu = [ { name: "Flight", path: "/" },
+  if (isOpen) {
+    document.addEventListener("mousedown", handleClickOutside);
+  } else {
+    document.removeEventListener("mousedown", handleClickOutside);
+  }
+
+  const menu = [
+    { name: "Flight", path: "/" },
     { name: "Packages", path: "/pakages" },
     { name: "Deals", path: "/deals" },
     { name: "Hotels", path: "/hotels" },
     { name: "Bus", path: "/bus" },
     { name: "Cruise", path: "/cruise" },
-    {name:"Gift Card", path:"/giftcard"},
-    {name:"My Booking", path:"/mybooking"},
-    {name:"Make Payment", path:"/makepayment"},
-    {name:"Bank Account Details", path:"/bankaccound"},
-    {name:"Dream Offers & Deals", path:"/offers&deals"}
-
-  ]
+    { name: "Gift Card", path: "/giftcard" },
+    { name: "My Booking", path: "/mybooking" },
+    { name: "Make Payment", path: "/makepayment" },
+    { name: "Bank Account Details", path: "/bankaccound" },
+    { name: "Dream Offers & Deals", path: "/offers&deals" },
+    { name: "Contact Us", path: "/contact" },
+  ];
   return (
     <div>
       <div className="flex items-center md:px-24  justify-between flex-wrap gap-4">
         {/* Left Section: Dropdown + Logo */}
         <div className=" flex sm:justify-between items-center gap-4">
           {/* Dropdown */}
-           {/* Toggle Menu Button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="relative md:top-0  btn btn-circle btn-ghost md:hover:bg-black/60 md:bg-black/50 text-white"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
-      </button>
+          {/* Toggle Menu Button */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative md:top-0  btn btn-circle btn-ghost md:hover:bg-black/60 md:bg-black/50 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </button>
 
-      {/* Sidebar */}
-      {isOpen && (
-        <aside
-          ref={sidebarRef}
-          className="fixed left-0 top-0 h-full z-40 flex flex-col items-start bg-black shadow-md transition-all duration-300 w-64 overflow-hidden"
-        >
-          <div className="w-full p-4 flex justify-end">
-            <button onClick={() => setIsOpen(false)} className="btn btn-sm btn-ghost">
-              ✕
+          {/* Sidebar */}
+          {isOpen && (
+            <aside
+              ref={sidebarRef}
+              className="fixed left-0 top-0 h-full z-40 flex flex-col items-start pb-6  bg-black shadow-md transition-all duration-300 w-64 overflow-auto"
+            >
+              <div className="w-full p-4 flex justify-end">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="btn btn-sm btn-ghost"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <ul className="menu p-2 text-white  w-full">
+                <li className="mb-2">
+                  <Link
+                    to="/"
+                    className="hover:bg-white hover:text-black rounded px-3 py-2 block"
+                  >
+                    Home
+                  </Link>
+                </li>
+                {menu.map((item, index) => (
+                  <li key={index} className="mb-2">
+                    <Link
+                      to={item.path}
+                      className="hover:bg-gray-100 hover:text-black rounded px-3 py-2 block"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+          <div className="md:hidden fixed bottom-0 w-full bg-white flex justify-around px-3 py-2 shadow-md">
+            <button className="flex flex-col items-center text-gray-700 hover:text-black">
+              <VscAccount className="text-xl" />
+              <span className="text-xs">Account</span>
+            </button>
+
+            <button className="flex flex-col items-center text-gray-700 hover:text-black">
+              <FiPhoneCall className="text-xl" />
+              <span className="text-xs">Call</span>
+            </button>
+
+            <button className="flex flex-col items-center text-gray-700 hover:text-black">
+              <TfiEmail className="text-xl" />
+              <span className="text-xs">Email</span>
             </button>
           </div>
-
-          <ul className="menu p-2 text-white  w-full">
-            <li className="mb-2">
-              <Link to="/" className="hover:bg-white hover:text-black rounded px-3 py-2 block">Home</Link>
-            </li>
-            {menu.map((item, index) => (
-              <li key={index} className="mb-2">
-                <Link to={item.path} className="hover:bg-gray-100 hover:text-black rounded px-3 py-2 block">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-         
-      
-        </aside>
-      )}
-    <div className="md:hidden fixed bottom-0 w-full bg-white flex justify-around px-3 py-2 shadow-md">
-      
-  <button className="flex flex-col items-center text-gray-700 hover:text-black">
-    <VscAccount className="text-xl" />
-    <span className="text-xs">Account</span>
-  </button>
-
-  <button className="flex flex-col items-center text-gray-700 hover:text-black">
-    <FiPhoneCall className="text-xl" />
-    <span className="text-xs">Call</span>
-  </button>
-
-  <button className="flex flex-col items-center text-gray-700 hover:text-black">
-    <TfiEmail className="text-xl" />
-    <span className="text-xs">Email</span>
-  </button>
-</div>
 
           {/* Logo */}
 
@@ -181,13 +193,40 @@ const NavMenu = () => {
               </li>
             </ul>
           </div>
-          <button className="bg-black/50 absolute md:relative right-6 top-8 md:top-0 md:right-0  hover:bg-black/70 text-white px-4 py-4 md:py-1.5 md:not-visited:rounded-2xl rounded-4xl  md:flex items-center text-sm transition">
+          <button
+            onClick={() => document.getElementById("my_modal_2").showModal()}
+            className="bg-black/50 absolute md:relative right-6 top-8 md:top-0 md:right-0  hover:bg-black/70 text-white px-4 py-4 md:py-1.5 md:not-visited:rounded-2xl rounded-4xl  md:flex items-center text-sm transition"
+          >
             <PiPhoneCallLight className="md:text-lg md:mr-2 text-xl " />
             <span className="hidden md:flex"> Call Us</span>
           </button>
         </div>
       </div>
-      <div className="fixed top-50 right-1.5 bg-red-500 text-xl"></div>
+
+      <dialog id="my_modal_2" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg border-1 border-gray-100">
+            We'd love to hear from you!
+          </h3>
+          <div className="flex justify-between">
+            <div className="m-2">
+              <p className="pb-4 text-lg text-accent">Call us on these numbers</p>
+              <p className="text-gray-500">999 999 9999</p>
+              <p className="text-gray-500">888 888 8888</p>
+              <p className="pt-4 text-lg text-accent">Email</p>
+              <p>admin@gamil.com</p>
+            </div>
+            <div className="w-30">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKf1rU4EgCuVeDLodVCvZSMbsJ_0xb_qfYyaNxmyetOiaks6Kka8n762xlp9okQ3fR2uM&usqp=CAU" alt="img"  
+              className="w-full"
+              />
+            </div>
+          </div>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </div>
   );
 };
