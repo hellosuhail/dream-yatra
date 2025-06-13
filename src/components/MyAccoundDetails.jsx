@@ -10,13 +10,12 @@ const MyAccountDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [accountsRes, upiRes] = await Promise.all([
           axios.get("/api/accounts"),
-          axios.get("/api/upi-ids")
+          axios.get("/api/upi-ids"),
         ]);
         setAccounts(accountsRes.data);
         setUpiIds(upiRes.data);
@@ -37,8 +36,8 @@ const MyAccountDetails = () => {
         <span className="mr-2">DPauls Holidays</span> /
         <span className="ml-2">Bank Accounts Detail</span>
       </div>
-      
-            <div className="w-full m-6 flex justify-start">
+
+      <div className="w-full m-6 flex justify-start">
         <Link
           to="/"
           className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800"
@@ -64,34 +63,43 @@ const MyAccountDetails = () => {
               {/* Bank Accounts */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* {accounts.map((account, index) => ( */}
-                  <div
-                    // key={index}
-                    className="flex items-start bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition"
-                  >
-                    <FaArrowRight className="mt-1 text-sky-600 mr-4" />
-                    <div>
-                      <p className="font-semibold text-gray-800">account bankname</p>
-                      <p className="text-sm text-gray-600">account address</p>
-                      <p className="text-sm mt-1">Account No.: <span className="font-medium">account.accountNo</span></p>
-                      <p className="text-sm">IFSC Code: <span className="font-medium">accound ifsc code</span></p>
-                    </div>
+                <div
+                  // key={index}
+                  className="flex items-start bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition"
+                >
+                  <FaArrowRight className="mt-1 text-sky-600 mr-4" />
+                  <div>
+                    <p className="font-semibold text-gray-800">
+                      account bankname
+                    </p>
+                    <p className="text-sm text-gray-600">account address</p>
+                    <p className="text-sm mt-1">
+                      Account No.:{" "}
+                      <span className="font-medium">account.accountNo</span>
+                    </p>
+                    <p className="text-sm">
+                      IFSC Code:{" "}
+                      <span className="font-medium">accound ifsc code</span>
+                    </p>
                   </div>
+                </div>
                 {/* ))} */}
               </div>
 
               {/* UPI IDs */}
               {upiIds.length > 0 && (
                 <div className="mt-10 border-t pt-6">
-                  <h2 className="text-lg font-semibold mb-4 text-gray-800">UPI IDs</h2>
+                  <h2 className="text-lg font-semibold mb-4 text-gray-800">
+                    UPI IDs
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* {upiIds.map((upi, index) => ( */}
-                      <div
-                        
-                        className="bg-gray-50 p-4 rounded shadow-sm border border-gray-200"
-                      >
-                        <p className="font-medium text-sm text-gray-700">UPI ID:</p>
-                        <p className="text-gray-900">upi</p>
-                      </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm border border-gray-200">
+                      <p className="font-medium text-sm text-gray-700">
+                        UPI ID:
+                      </p>
+                      <p className="text-gray-900">upi</p>
+                    </div>
                     {/* ))} */}
                   </div>
                 </div>
