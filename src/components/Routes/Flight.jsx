@@ -13,7 +13,7 @@ const Flight = () => {
   const MidNavData=["Domestic Flights","International Flights","with Flight Packages","Sightseeing Tours"]
 
 const search = useMemo(() => (
-  <div className="flex flex-col md:flex-row font-bold flex-wrap items-center w-full gap-2">
+  <div className="flex flex-col md:flex-row font-bold flex-wrap items-center w-full ">
     <input
       type="search"
       placeholder="Leaving From"
@@ -36,7 +36,6 @@ const search = useMemo(() => (
       type="date"
       className="w-full md:w-44 h-16 px-2 border border-gray-300 rounded"
     />
-    
     <button className="w-full md:w-48 h-16 text-black rounded">
       1 Traveller(s) | Economy
     </button>
@@ -50,7 +49,9 @@ const search = useMemo(() => (
         <div className="flex justify-center">
         <MidNav initalData={MidNavData} />
       </div>
+      <div className="flex justify-center">
         <Carousel />
+        </div>
         <Card title="India Tour Packages - Dekho My India"/>
         <HolidayPakages/>
         <Travel/>

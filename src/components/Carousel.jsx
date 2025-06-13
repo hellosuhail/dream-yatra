@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Carousel = () => {
- const slides = [
+  const slides = [
     [
       "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
       "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp",
@@ -19,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); 
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -29,27 +29,31 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-6xl justify-center  overflow-hidden ml-20 m-12 ">
-     
-      <div
-        className="flex w-full"
-        style={slideStyle}
-      >
+    <div className="relative mt-8 w-full max-w-6xl mx-auto overflow-hidden px-4 py-8">
+      {/* Slide wrapper */}
+      <div className="flex w-full" style={slideStyle}>
         {slides.map((group, index) => (
-          <div key={index} className="flex justify-center w-full gap-4 flex-shrink-0">
+          <div
+            key={index}
+            className="flex justify-center w-full gap-4 flex-shrink-0"
+          >
             {group.map((img, i) => (
               <img
                 key={i}
                 src={img}
-                className="w-80 h-60 object-cover rounded-lg"
                 alt={`slide-${i}`}
+                className={`
+                  w-full max-w-xs md:w-80 md:h-60 object-cover rounded-lg 
+                  ${i === 0 ? 'block' : 'hidden'} 
+                  md:block
+                `}
               />
             ))}
           </div>
         ))}
       </div>
 
-    
+      {/* Navigation buttons */}
       <div className="absolute left-5 right-5 top-1/2 flex justify-between -translate-y-1/2">
         <button
           onClick={() =>
@@ -70,10 +74,8 @@ const Carousel = () => {
           ❯
         </button>
       </div>
-
-
     </div>
   );
 };
 
-export default Carousel
+export default Carousel;
