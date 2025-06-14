@@ -17,7 +17,7 @@ const Cruise = () => {
       <input
         type="search"
         placeholder="type here to search..."
-        className="w-full p-4  rounded h-16"
+        className="w-full p-4 text-white rounded h-16"
       />
     </div>
   ));
@@ -25,7 +25,9 @@ const Cruise = () => {
     <div>
       <div className="flex justify-center">
         <Search searchInput={search} />
+        <div className="flex justify-center m-4">
         <MidNav initalData={MidNavData} />
+        </div>
       </div>
       <Card title="India Tour Packages - Dekho My India" />
       <HolidayPakages />

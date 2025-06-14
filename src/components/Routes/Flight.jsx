@@ -19,7 +19,7 @@ const Flight = () => {
 
   const search = useMemo(
     () => (
-      <div className="flex flex-col md:flex-row font-bold flex-wrap items-center w-full ">
+      <div className="flex text-gray-600 flex-col md:flex-row font-bold flex-wrap items-center w-full ">
         <input
           type="search"
           placeholder="Leaving From"
@@ -42,7 +42,7 @@ const Flight = () => {
           type="date"
           className="w-full md:w-44 h-16 px-2 border border-gray-300 rounded"
         />
-        <button className="w-full md:w-48 h-16 text-black rounded">
+        <button className="w-full md:w-48 h-16 rounded">
           1 Traveller(s) | Economy
         </button>
       </div>

@@ -1,7 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import { IoHomeOutline } from "react-icons/io5";
+import { PiAirplaneTakeoffLight } from "react-icons/pi";
+import { IoBusOutline } from "react-icons/io5";
+import { LuSmartphoneCharging } from "react-icons/lu";
+import { BiSolidSchool } from "react-icons/bi";
+import { RiCactusLine, RiMailSendLine, RiRemoteControl2Line } from "react-icons/ri";
+import { MdCardTravel } from "react-icons/md";
+import { CiBank } from "react-icons/ci";
+import { FaUsers } from "react-icons/fa";
+import { GoGift } from "react-icons/go";
+import { CiCircleInfo } from "react-icons/ci";
+import { FaHandshake } from "react-icons/fa";
+import { IoBookOutline } from "react-icons/io5";
+import { FaHandHolding } from "react-icons/fa";
+import { LuShip } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { VscAccount } from "react-icons/vsc";
 import { PiPhoneCallLight } from "react-icons/pi";
+import { RiContactsLine } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import AuthModal from "./Login";
@@ -24,23 +40,25 @@ const NavMenu = () => {
   }
 
   const menu = [
-    { name: "Flight", path: "/" },
-    { name: "Packages", path: "/pakages" },
-    { name: "Deals", path: "/deals" },
-    { name: "Hotels", path: "/hotels" },
-    { name: "Bus", path: "/bus" },
-    { name: "Cruise", path: "/cruise" },
-    { name: "Gift Card", path: "/giftcard" },
-    { name: "My Booking", path: "/mybooking" },
-    { name: "Make Payment", path: "/makepayment" },
-    { name: "Bank Account Details", path: "/bankaccound" },
-    { name: "Dream Offers & Deals", path: "/offers&deals" },
-    {name: "Send  Enquiry", path:"/enquiry"},
-    { name: "Contact Us", path: "/contact" },
-    {name:"About us" , path:"/about"},
-    {name:"Feedback" , path:"/feedback"},
-    {name:"Visa Information" , path:"/visa-information"},
-    {name:"Terms And Conditions", path:"/terms-and-conditions"}
+    { name: "Home", path:"/",icon: <IoHomeOutline/>},
+    { name: "Flight", path: "/" , icon: <PiAirplaneTakeoffLight/>  },
+    { name: "Packages", path: "/pakages" , icon:<MdCardTravel/>},
+    { name: "Deals", path: "/deals" , icon:<LuSmartphoneCharging/> },
+    { name: "Hotels", path: "/hotels" , icon:<BiSolidSchool/> },
+    { name: "Bus", path: "/bus" ,icon:<IoBusOutline/>},
+    { name: "Cruise", path: "/cruise" , icon:<LuShip/>},
+    { name: "Gift Card", path: "/giftcard" , icon:<GoGift/>},
+    { name: "My Booking", path: "/mybooking" , icon:<IoBookOutline/>},
+    { name: "Make Payment", path: "/makepayment" , icon:<CiBank/>},
+    { name: "Bank Account Details", path: "/bankaccound" , icon:<FaHandHolding/>},
+    { name: "DreamViewer Offers & Deals", path: "/offers&deals" ,  icon:<GoGift/>},
+    {name:"Travel deals", path:"/deals", icon:<LuSmartphoneCharging/>},
+    {name: "Send  Enquiry", path:"/enquiry" , icon:<RiMailSendLine/>},
+    { name: "Contact Us", path: "/contact", icon:<RiCactusLine/>},
+    {name:"About us" , path:"/about", icon:<FaUsers/>},
+    {name:"Feedback" , path:"/feedback" , icon : <RiMailSendLine/>},
+    {name:"Visa Information" , path:"/visa-information", icon: <CiCircleInfo/>},
+    {name:"Terms And Conditions", path:"/terms-and-conditions", icon:<FaHandshake/>}
   ];
   return (
     <div>
@@ -85,21 +103,17 @@ const NavMenu = () => {
               </div>
 
               <ul className="menu p-2 text-white  w-full">
-                <li className="mb-2">
-                  <Link
-                    to="/"
-                    className="hover:bg-white hover:text-black rounded px-3 py-2 block"
-                  >
-                    Home
-                  </Link>
+                <li className="mb-2 flex flex-col justify-between">
+                  {/* <img src="/Images/profile.png" alt="profile" className="w-10"/> */}
+                  <button className="text-xl font-bold">Hello Guest</button>
                 </li>
                 {menu.map((item, index) => (
                   <li key={index} className="mb-2">
                     <Link
                       to={item.path}
-                      className="hover:bg-gray-100 hover:text-black rounded px-3 py-2 block"
+                      className="hover:bg-gray-100 hover:text-black rounded px-3 py-2 flex"
                     >
-                      {item.name}
+                      {item.icon}{item.name}
                     </Link>
                   </li>
                 ))}
@@ -209,7 +223,7 @@ const NavMenu = () => {
       </div>
 
       <dialog id="my_modal_2" className="modal">
-        <div className="modal-box">
+        <div className="modal-box bg-gray-200">
           <h3 className="font-bold text-lg border-1 border-gray-100">
             We'd love to hear from you!
           </h3>

@@ -18,7 +18,7 @@ const MidNav = ({initalData}) => {
         className="flex justify-between w-full text-gray-700 font-medium text-sm md:text-base"
         key={index}
       >
-        <li className="hover:text-blue-600 cursor-pointer" onClick={()=>scrollDown(data.top)}>{data.title}</li>
+        <li className="hover:text-blue-600 cursor-pointer text-center" onClick={()=>scrollDown(data.top)}>{data.title}</li>
       </ul>
     ))}
   </nav>

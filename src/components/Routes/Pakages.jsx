@@ -9,16 +9,21 @@ import Search from "../Search";
 const MidNavData = [
   { title: "india Holiday Packages", top: 800 },
   { title: "International Holiday pakages", top: 1100 },
-  {title:"Holiday Ideas",top:1500},
-  {title:"Honeymoon Packagess",top:1800},
+  { title: "Holiday Ideas", top: 1500 },
+  { title: "Honeymoon Packagess", top: 1800 },
 ];
 const Pakages = () => {
   const search = useMemo(() => (
-    <div className="flex flex-col md:flex-row flex-wrap items-center w-full">
+    <div className="flex flex-col md:flex-row text-black flex-wrap items-center w-full">
       <input
         type="search"
-        placeholder="type here to search..."
-        className="md:w-full w-96 p-4 rounded h-16"
+        placeholder="where are you goning..."
+        className=" w-96 md:w-1/2 p-4 rounded h-16"
+      />
+      <input
+        type="search"
+        placeholder="Enter the pin code..."
+        className=" w-96 md:w-1/2  p-4 rounded h-16"
       />
     </div>
   ));
@@ -29,10 +34,7 @@ const Pakages = () => {
         <MidNav initalData={MidNavData} />
       </div>
       <Carousel />
-      <Card
-        title="Best Selling India Holiday Packages
-"
-      />
+      <Card title="Best Selling India Holiday Packages" />
       <HolidayPakages />
       <Travel />
     </div>

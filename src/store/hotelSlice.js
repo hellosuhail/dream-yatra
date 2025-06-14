@@ -1,7 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
-  hotels: [
+  hotels:[
     {
       id: nanoid(),
       category: "Indian",

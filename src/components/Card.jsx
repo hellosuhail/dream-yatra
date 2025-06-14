@@ -45,7 +45,7 @@ const Card = ({ title }) => {
       >
         {data.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-lg shadow-md">
+            <div className="bg-white cursor-grab rounded-lg shadow-md">
               <div className="relative group overflow-hidden rounded-lg">
                 <img
                   src={item.image}

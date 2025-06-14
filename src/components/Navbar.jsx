@@ -27,10 +27,23 @@ const Navbar = () => {
     });
   };
 
+  const bgImg = {
+    "/":"/Images/img.avif",
+    "/packages":"/Images/Maldives.jpg",
+    "/hotels":"/Images/Sri-Lanka.jpg",
+    "/bus":"/Images/sydney.jpg",
+    "/cruise":"/Images/Mauritius2.jpg"
+  }
+  const currentBg = bgImg[location.pathname]|| "/Images/img.avif";
+// ('/Images/img.avif')
   return (
     <div className="w-full overflow-hidden">
       
-      <div className="bg-[#39c9bb] md:bg-[url('/Images/img.avif')] rounded-2xl md:rounded-none bg-cover bg-center md:h-[70vh] mt-1 w-full">
+      <div className={`bg-[#39c9bb]  rounded-2xl md:rounded-none bg-cover bg-center md:h-[70vh] mt-1 w-full`}
+      style={{
+        backgroundImage:`url(${currentBg})`
+      }}
+      >
         <div className="px-4 py-4 md:py-6">
           {/* Navbar Row */}
           <NavMenu />

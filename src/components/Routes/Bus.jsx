@@ -14,11 +14,20 @@ const MidNavData = [
 ];
 const Bus = () => {
   const search = useMemo(() => (
-    <div className="flex flex-col md:flex-row flex-wrap items-center w-full">
+    <div className="flex font-bold flex-col md:flex-row flex-wrap items-center w-full">
       <input
         type="search"
-        placeholder="type here to search..."
-        className="w-full p-4 bg-transparent rounded h-16"
+        placeholder="e.g. City, Area"
+        className="w-1/3 p-4 bg-transparent rounded  h-16"
+      />
+        <input
+        type="search"
+        placeholder="e.g.Enter destination City, Area"
+        className="w-1/3 p-4 bg-transparent rounded h-16"
+      />
+        <input
+        type="date"
+        className="w-1/3 text-gray-600 p-4 bg-transparent rounded h-16"
       />
     </div>
   ));
