@@ -35,7 +35,12 @@ const NavMenu = () => {
     { name: "Make Payment", path: "/makepayment" },
     { name: "Bank Account Details", path: "/bankaccound" },
     { name: "Dream Offers & Deals", path: "/offers&deals" },
+    {name: "Send  Enquiry", path:"/enquiry"},
     { name: "Contact Us", path: "/contact" },
+    {name:"About us" , path:"/about"},
+    {name:"Feedback" , path:"/feedback"},
+    {name:"Visa Information" , path:"/visa-information"},
+    {name:"Terms And Conditions", path:"/terms-and-conditions"}
   ];
   return (
     <div>

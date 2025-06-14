@@ -1,43 +1,14 @@
 import React from "react";
+import { holidaySlider} from "./CardData/TravelCardData"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const data = [
-  {
-    id: 1,
-    image: "https://source.unsplash.com/400x300/?paris",
-    place: "Paris",
-    price: "₹15,000",
-  },
-  {
-    id: 2,
-    image: "https://source.unsplash.com/400x300/?newyork",
-    place: "New York",
-    price: "₹20,000",
-  },
-  {
-    id: 3,
-    image: "https://source.unsplash.com/400x300/?tokyo",
-    place: "Tokyo",
-    price: "₹18,000",
-  },
-  {
-    id: 4,
-    image: "https://source.unsplash.com/400x300/?london",
-    place: "London",
-    price: "₹16,500",
-  },
-  {
-    id: 5,
-    image: "https://source.unsplash.com/400x300/?dubai",
-    place: "Dubai",
-    price: "₹19,000",
-  },
-];
+
 
 const HolidayPakages = () => {
+  const data =holidaySlider;
   return (
   <div className="relative bg-[#020f23] overflow-hidden md:h-[60vh] mx-auto px-4 py-10 flex items-center justify-center">
   {/* Decorative Circles */}

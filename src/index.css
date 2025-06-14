@@ -5,3 +5,6 @@
   background-color: #39c9bb;
 
 } */
+ .bg-img{
+  z-index: -10;
+ }

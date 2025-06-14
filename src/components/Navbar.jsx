@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      {/* Background Container */}
+      
       <div className="bg-[#39c9bb] md:bg-[url('/Images/img.avif')] rounded-2xl md:rounded-none bg-cover bg-center md:h-[70vh] mt-1 w-full">
         <div className="px-4 py-4 md:py-6">
           {/* Navbar Row */}

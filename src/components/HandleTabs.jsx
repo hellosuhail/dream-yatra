@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const HandleTabs = () => {
+  const [scroll,setScroll]=useState(false);
+
+  useEffect(()=>{
+    const handleScrolled =()=>{
+      const newScrolled = window.scrollY > 1380
+      setScroll(newScrolled)
+    }
+
+      window.addEventListener("scroll", handleScrolled)
+      return ()=> window.removeEventListener("scroll", handleScrolled)
+  },[])
 
     const tabData= [
         {name:"Napal",img:"/Images/Napal.jpg"},
@@ -21,7 +32,7 @@ const HandleTabs = () => {
     ]
   return (
     <div>
-       <div className="overflow-x-auto bg-base-200 py-4 px-3">
+       <div className={`overflow-x-auto bg-base-200 py-4 px-3 ${scroll? "fixed top-0 overflow-x-auto z-10 ":""}`}>
   <div className="flex flex-nowrap gap-4">
     {tabData.map((data, index) => (
       <div

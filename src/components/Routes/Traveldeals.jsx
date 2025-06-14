@@ -3,6 +3,8 @@ import { GoArrowLeft } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 import DealsCard from '../DealsCard';
 import HandleTabs from '../HandleTabs';
+import TravelCard from '../TravelCard';
+import { napalData , Thailanddata, dubaiData} from '../CardData/TravelCardData';
 
 
 const Traveldeals = () => {
@@ -11,6 +13,7 @@ const Traveldeals = () => {
     'https://media.dpauls.com/drive-server/images/traveldeal/disneyland/disney-cruise-header-image.jpg'
   ];
 
+   
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((current + 1) % images.length);
@@ -70,8 +73,23 @@ const Traveldeals = () => {
 </div>
 <HandleTabs/>
 </div>
-
-    </div>
+<TravelCard data={napalData} name={"Nepal Packages"}/>
+<TravelCard  data={Thailanddata} name="Thailand Packages"/>
+<TravelCard data={dubaiData} name="Dubai Packages"/>
+<TravelCard data={dubaiData} name="Singapore & Malaysia Packages"/>
+<TravelCard data={dubaiData} name="Bali Packages"/>
+<TravelCard data={dubaiData} name="Bhutan Package"/>
+<TravelCard data={dubaiData} name="Almaty Package"/>
+<TravelCard data={dubaiData} name="Maldives Packages"/>
+<TravelCard data={dubaiData} name="Mauritius Packages"/>
+<TravelCard data={dubaiData} name="Sri Lanka Packages"/>
+<TravelCard data={dubaiData} name="Vietnam Packages"/>
+<TravelCard data={dubaiData} name="Hong Kong Packages"/>
+<TravelCard data={dubaiData} name="Europe Packages"/>
+<TravelCard data={dubaiData} name="South Africa with Mauritius Packages"/>
+<TravelCard data={dubaiData} name="Australia & New Zealand Packages"/>
+<TravelCard data={dubaiData} name="Japan & South Korea Package"/>
+  </div>
   )
 }
 
