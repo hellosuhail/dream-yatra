@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-const Carousel = () => {
-  const slides = [
-    [
-      "/Images/Napal.jpg",
-      "/Images/bhutan.avif",
-      "/Images/singhapora.jpg",
-    ],
-    [
-      "/Images/hong-kong.jpg",
-      "/Images/paris.jpg",
-      "/Images/south-africa.jpg",
-    ],
-  ];
+const Carousel = ({slides}) => {
+  // const slides = [
+  //   [
+  //     "/Images/Napal.jpg",
+  //     "/Images/bhutan.avif",
+  //     "/Images/singhapora.jpg",
+  //   ],
+  //   [
+  //     "/Images/hong-kong.jpg",
+  //     "/Images/paris.jpg",
+  //     "/Images/south-africa.jpg",
+  //   ],
+  // ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
 

@@ -14,11 +14,13 @@ import MyAccoundDetails from "./components/MyAccoundDetails";
 import OffersDeals from "./components/OffersDeals";
 import OfferNoFees from "./components/OfferNoFees";
 import ContactUs from "./components/ContactUs";
+import AllHotels from "./components/AllHotels";
+import SeeHotelsDeals from "./components/SeeHotelsDeals";
 
 
 function Layout() {
   const location = useLocation();
-  const hideNavbarOnRoutes = ["/deals","/giftcard","/offers&deals","/nofees","/makepayment","/contact"];
+  const hideNavbarOnRoutes = ["/deals","/giftcard","/offers&deals","/hotels/deals","/hotels/bestdeals","/contact"];
   const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
 
 
@@ -35,6 +37,8 @@ function Layout() {
         <Route path="/cruise" element={<Cruise />} />
         <Route path="/login" element={<AuthModal/>}/>
         <Route path="/giftcard" element={<GiftCard/>}/>
+        <Route path="/hotels/bestdeals" element={<AllHotels/>}/>
+        <Route path="/hotels/deals" element={<SeeHotelsDeals/>}/>
         <Route path="/bankaccound" element={<MyAccoundDetails/>} />
         <Route path="/offers&deals" element={<OffersDeals/>} />
         <Route path="/nofees" element={<OfferNoFees/>} />

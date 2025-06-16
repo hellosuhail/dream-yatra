@@ -12,6 +12,19 @@ const MidNavData = [
   { title: "Holiday Ideas", top: 1500 },
   { title: "Honeymoon Packagess", top: 1800 },
 ];
+
+ const slides = [
+    [
+      "/Images/south-africa.jpg",
+      "/Images/thailand.jpg",
+      "/Images/Sri-Lanka.jpg",
+    ],
+    [
+      "/Images/hong-kong.jpg",
+      "/Images/vietnam.jpg",
+      "/Images/south-africa.jpg",
+    ],
+  ];
 const Pakages = () => {
   const search = useMemo(() => (
     <div className="flex flex-col md:flex-row text-black flex-wrap items-center w-full">
@@ -33,7 +46,7 @@ const Pakages = () => {
       <div className="flex justify-center">
         <MidNav initalData={MidNavData} />
       </div>
-      <Carousel />
+      <Carousel slides={slides}/>
       <Card title="Best Selling India Holiday Packages" />
       <HolidayPakages />
       <Travel />

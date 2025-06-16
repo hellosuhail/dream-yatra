@@ -6,6 +6,19 @@ import Travel from "../Travel";
 import MidNav from "../MidNav";
 import Search from "../Search";
 
+ const slides = [
+    [
+      "/Images/Napal.jpg",
+      "/Images/bhutan.avif",
+      "/Images/singhapora.jpg",
+    ],
+    [
+      "/Images/hong-kong.jpg",
+      "/Images/paris.jpg",
+      "/Images/south-africa.jpg",
+    ],
+  ];
+
 const Flight = () => {
   const [from, setFrom] = useState("New Delhi");
   const [goingTo, setGoingTo] = useState("BOM-Mumbai");
@@ -61,7 +74,7 @@ const Flight = () => {
         <MidNav initalData={MidNavData} />
       </div>
       <div className="flex justify-center">
-        <Carousel  />
+        <Carousel  slides={slides}/>
       </div>
       <Card title="India Tour Packages - Dekho My India" />
       <HolidayPakages />

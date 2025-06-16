@@ -11,6 +11,18 @@ const MidNavData = [
   { title: "Travel Destination Guide", top: 1500 },
   {title:"Cruise Destinations",top:1800},
 ];
+ const slides = [
+    [
+      "/Images/south-africa.jpg",
+      "/Images/thailand.jpg",
+      "/Images/Sri-Lanka.jpg",
+    ],
+    [
+      "/Images/hong-kong.jpg",
+      "/Images/vietnam.jpg",
+      "/Images/south-africa.jpg",
+    ],
+  ];
 const Cruise = () => {
   const search = useMemo(() => (
     <div className="flex flex-col md:flex-row flex-wrap items-center w-full">
@@ -29,6 +41,7 @@ const Cruise = () => {
         <MidNav initalData={MidNavData} />
         </div>
       </div>
+      <Carousel slides={slides}/>
       <Card title="India Tour Packages - Dekho My India" />
       <HolidayPakages />
       <Travel />

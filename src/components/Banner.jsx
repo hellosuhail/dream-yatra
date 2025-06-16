@@ -6,7 +6,7 @@ const Banner = () => {
 
 
   const navItems = [
-    { name: "Flight", path: "/", color:"bg-blue-500 hover:bg-blue-600" },
+    { name: "Flight", path: "/", color:"bg-blue-500 hover:bg-blue-600", },
     { name: "Packages", path: "/packages", color:"bg-green-500 hover:bg-green-600" },
     { name: "Travel Deals", path: "/deals", color:"bg-red-500 hover:bg-red-600" },
     { name: "Hotels", path: "/hotels", color:"bg-yellow-500 hover:bg-yellow-600" },

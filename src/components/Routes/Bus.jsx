@@ -12,6 +12,18 @@ const MidNavData = [
   { title: "Bus Routes from India", top: 1500 },
   { title: "Pilgrimage Bus Routes", top: 1800 },
 ];
+ const slides = [
+    [
+      "/Images/south-africa.jpg",
+      "/Images/thailand.jpg",
+      "/Images/Sri-Lanka.jpg",
+    ],
+    [
+      "/Images/hong-kong.jpg",
+      "/Images/vietnam.jpg",
+      "/Images/south-africa.jpg",
+    ],
+  ];
 const Bus = () => {
   const search = useMemo(() => (
     <div className="flex font-bold flex-col md:flex-row flex-wrap items-center w-full">
@@ -38,8 +50,8 @@ const Bus = () => {
       <div className="flex justify-center">
         <MidNav initalData={MidNavData} />
       </div>
-      <Carousel />
-      <Card title="India Tour Packages - Dekho My India" />
+      <Carousel slides={slides}/>
+      <Card title="India Tour Packages - Dekho My India"   />
       <HolidayPakages />
       <Travel />
     </div>

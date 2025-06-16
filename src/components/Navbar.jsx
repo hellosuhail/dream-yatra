@@ -30,19 +30,30 @@ const Navbar = () => {
   const bgImg = {
     "/":"/Images/img.avif",
     "/packages":"/Images/Maldives.jpg",
-    "/hotels":"/Images/Sri-Lanka.jpg",
+    "/hotels":"/Images/hotels/new-york.avif",
     "/bus":"/Images/sydney.jpg",
-    "/cruise":"/Images/Mauritius2.jpg"
+    "/cruise":"/Images/Mauritius2.jpg",
   }
+  const bgTexts = {
+  "/": "Book Flights Tickets, Tour Packages, Hotels & Sightseeing",
+  "/packages": "Book India & International Holiday Tour Packages",
+  "/hotels": "Book Domestic & International Hotels Online",
+  "/bus": "Book Bus Ticket Online",
+  "/cruise": "Book Online Cruise Tour Packages",
+};
+
   const currentBg = bgImg[location.pathname]|| "/Images/img.avif";
-// ('/Images/img.avif')
+  const currentText = bgTexts[location.pathname]
+
   return (
     <div className="w-full overflow-hidden">
       
       <div className={`bg-[#39c9bb]  rounded-2xl md:rounded-none bg-cover bg-center md:h-[70vh] mt-1 w-full`}
-      style={{
-        backgroundImage:`url(${currentBg})`
-      }}
+     style={{
+    backgroundImage: window.innerWidth > 768 ? `url(${currentBg})` : "none",
+    backgroundSize: "cover",
+    backgroundPosition: "center", 
+  }}
       >
         <div className="px-4 py-4 md:py-6">
           {/* Navbar Row */}
@@ -51,7 +62,7 @@ const Navbar = () => {
           {/* Heading Below Navbar */}
           <div className="text-center mt-6 md:mt-10">
             <h1 className="text-xl md:text-3xl font-semibold text-white leading-snug max-w-4xl mx-auto">
-              Book Flights Tickets, Tour Packages, Hotels & Sightseeing
+               {currentText}
             </h1>
           </div>
 
