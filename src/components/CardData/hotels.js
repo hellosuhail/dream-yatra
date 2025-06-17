@@ -164,10 +164,10 @@ export const hotelData = [
   },
   {
     images: [
-      "/Images/hotels/noida.webp",
-      "/Images/hotels/noida1.webp",
-      "/Images/hotels/noida3.webp",
-      "/Images/hotels/noida4.avif",
+      "/Images/hotels/Nuuk.jpg",
+      "/Images/hotels/Nuuk1.jpg",
+      "/Images/hotels/Nuuk2.jpg",
+      "/Images/hotels/Nuuk3.jpg",
     ],
 
     name: "Aurora Sky Lodge",
@@ -183,10 +183,10 @@ export const hotelData = [
   },
   {
     images: [
-      "/Images/hotels/noida.webp",
-      "/Images/hotels/noida1.webp",
-      "/Images/hotels/noida3.webp",
-      "/Images/hotels/noida4.avif",
+      "/Images/hotels/Frederiksberg.webp",
+      "/Images/hotels/Frederiksberg1.jpg",
+      "/Images/hotels/Frederiksberg2.jpg",
+      "/Images/hotels/Frederiksberg3.jpg",
     ],
 
     name: "Metro Central Hotel",
