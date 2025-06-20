@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import Carousel from "../Carousel";
+import { motion } from "framer-motion";
 import Card from "../Card";
 import HolidayPakages from "../HolidayPakages";
 import Travel from "../Travel";
@@ -65,6 +66,12 @@ const Flight = () => {
 
   return (
     <div className="overflow-hidden">
+            <motion.h1
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className=""
+      >
       {/* <div className="">
       <div className="bg-img bg-[#39c9bb] top-0  md:bg-[url('/Images/img.avif')] rounded-2xl md:rounded-none bg-cover bg-center md:h-[70vh] mt-1 w-full">
 </div></div> */}
@@ -78,7 +85,7 @@ const Flight = () => {
       </div>
       <Card title="India Tour Packages - Dekho My India" />
       <HolidayPakages />
-      <Travel />
+      <Travel /></motion.h1>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const MidNav = ({initalData}) => {
     })
   }
   return (
-   <div className="hidden md:block z-0 bg-gray-100 md:absolute md:top-108 w-full max-w-6xl shadow-xl py-4 pl-30 rounded-3xl mx-auto">
+   <div className="hidden md:block z-0 bg-gray-100 md:absolute md:top-100 w-full max-w-6xl shadow-xl py-4 pl-30 rounded-3xl mx-auto">
   <nav className="md:flex w-full justify-between px-4">
     {initalData.map((data, index) => (
       <ul

@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { GoArrowLeft } from "react-icons/go";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { hotelData } from "./CardData/hotels";
 
 const AllHotels = () => {
   const [imageIndexes, setImageIndexes] = useState(hotelData.map(() => 0));
+
+  const navigate=useNavigate()
+
+  const  navigateHandle =()=>{
+    navigate('/hotels/recommended')
+  }
 
   const handlePrev = (index) => {
     setImageIndexes((prev) =>
@@ -55,6 +61,7 @@ const AllHotels = () => {
           >
             <figure className="relative">
               <img
+              onClick={navigateHandle}
                 src={data.images[imageIndexes[index]]}
                 alt={`slide-${imageIndexes[index]}`}
                 className="w-full max-w-xs cursor-pointer md:w-80 md:h-60 object-cover rounded-lg"
@@ -102,8 +109,8 @@ const AllHotels = () => {
                 <div className="badge badge-outline text-green-600 font-semibold">
                   {data.discount}
                 </div>
-                <button className="btn btn-accent">
-                  {data.location}, hotels
+                <button className="btn text-white btn-accent">
+                Book Now
                 </button>
               </div>
             </div>

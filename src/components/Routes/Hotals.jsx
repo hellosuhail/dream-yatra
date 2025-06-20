@@ -6,6 +6,7 @@ import Carousel from "../Carousel";
 import { slider } from "../CardData/hotels";
 import HotelsDeals from "../HotelsDeals";
 import HotelsPopularArea from "../hotelsPopularArea";
+import HotelAreas from "../HotelAreas";
 
 
 const Hotals = () => {
@@ -64,6 +65,7 @@ const Hotals = () => {
       </div>
       <Carousel slides={slider}/>
       <HotelsDeals num={6} num1={0} title="The best last-minute holiday deals" />
+      <HotelAreas/>
       <HotelsPopularArea/>
 
 

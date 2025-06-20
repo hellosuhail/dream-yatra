@@ -16,11 +16,13 @@ import OfferNoFees from "./components/OfferNoFees";
 import ContactUs from "./components/ContactUs";
 import AllHotels from "./components/AllHotels";
 import SeeHotelsDeals from "./components/SeeHotelsDeals";
+import WelcomeAnimation from "./components/Welcome";
+import HotelSearch from "./components/HotelSearch";
 
 
 function Layout() {
   const location = useLocation();
-  const hideNavbarOnRoutes = ["/deals","/giftcard","/offers&deals","/hotels/deals","/hotels/bestdeals","/contact"];
+  const hideNavbarOnRoutes = ["/deals","/giftcard","/offers&deals","/hotels/deals","/hotels/bestdeals","/contact","/hotels/recommended"];
   const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
 
 
@@ -28,6 +30,7 @@ function Layout() {
   return (
     <>
       {!shouldHideNavbar && <Navbar />}
+      <WelcomeAnimation/>
       <Routes>
         <Route path="/" element={<Flight />} />
         <Route path="/packages" element={<Pakages />} />
@@ -38,6 +41,7 @@ function Layout() {
         <Route path="/login" element={<AuthModal/>}/>
         <Route path="/giftcard" element={<GiftCard/>}/>
         <Route path="/hotels/bestdeals" element={<AllHotels/>}/>
+        <Route path="/hotels/recommended" element={<HotelSearch/>}/>
         <Route path="/hotels/deals" element={<SeeHotelsDeals/>}/>
         <Route path="/bankaccound" element={<MyAccoundDetails/>} />
         <Route path="/offers&deals" element={<OffersDeals/>} />
