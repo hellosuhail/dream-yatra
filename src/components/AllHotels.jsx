@@ -12,6 +12,9 @@ const AllHotels = () => {
     navigate('/hotels/recommended')
   }
 
+  const bookingPage=()=>{
+    navigate('/hotels/booking')
+  }
   const handlePrev = (index) => {
     setImageIndexes((prev) =>
       prev.map((imgIdx, i) =>
@@ -100,16 +103,18 @@ const AllHotels = () => {
                 <p className="text-lg font-bold">
                   {data.currentPrice} {data.currency}
                 </p>
+
                 <p className="text-xs text-gray-500">
                   {data.perNight} {data.currency} per night incl. taxes
-                </p>
+                </p><div className="badge badge-outline text-green-600 font-semibold">
+                  {data.discount}
+                </div>
               </div>
 
               <div className="card-actions justify-between items-center flex   mt-4">
-                <div className="badge badge-outline text-green-600 font-semibold">
-                  {data.discount}
-                </div>
-                <button className="btn text-white btn-accent">
+                
+                <Link to="/hotels/review" className="link text-blue-500">View Detils</Link>
+                <button onClick={bookingPage} className="btn text-white btn-accent">
                 Book Now
                 </button>
               </div>
