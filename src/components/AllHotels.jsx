@@ -5,11 +5,12 @@ import { hotelData } from "./CardData/hotels";
 
 const AllHotels = () => {
   const [imageIndexes, setImageIndexes] = useState(hotelData.map(() => 0));
+  
 
   const navigate=useNavigate()
 
-  const  navigateHandle =()=>{
-    navigate('/hotels/recommended')
+  const  navigateHandle =(id)=>{
+    navigate(`/hotels/review/${id}`)
   }
 
   const bookingPage=()=>{
@@ -36,7 +37,7 @@ const AllHotels = () => {
   };
   return (
     <div>
-      <div className="bg-sky-600 h-12 flex items-center px-10 text-white text-sm font-medium shadow">
+      <div className="bg-sky-600 h-12 md:flex items-center px-10 text-white text-sm font-medium shadow">
         <span className="mr-2">Dreamviewer Yatra</span> /
         <span className="ml-2">Contact Us</span>
       </div>
@@ -53,10 +54,10 @@ const AllHotels = () => {
         The best last-minute holiday deals.
       </h1>
       <p className="px-12 pb-6 text-sm">viled for 20 jun 25</p>
-      <div className="felx justify-center items-center w-full px-28 py-4">
-        <div className="bg-[url(/Images/hotels/mumbai.jpg)] w-6xl  bg-red-500 rounded-xl h-90"></div>
+      <div className="felx justify-center items-center w-full md:px-28 py-4">
+        <div className="bg-[url(/Images/hotels/mumbai.jpg)] md:w-6xl  bg-red-500 rounded-xl h-90"></div>
       </div>
-      <div className="flex flex-wrap gap-4 hover:shadow-2xl px-30 justify-center py-4">
+      <div className="md:flex flex-wrap gap-4 hover:shadow-2xl px-12 md:px-30 justify-center py-4">
         {hotelData.map((data, index) => (
           <div
             key={index}
@@ -64,7 +65,7 @@ const AllHotels = () => {
           >
             <figure className="relative">
               <img
-              onClick={navigateHandle}
+              onClick={()=>navigateHandle(data.id)}
                 src={data.images[imageIndexes[index]]}
                 alt={`slide-${imageIndexes[index]}`}
                 className="w-full max-w-xs cursor-pointer md:w-80 md:h-60 object-cover rounded-lg"
@@ -113,7 +114,7 @@ const AllHotels = () => {
 
               <div className="card-actions justify-between items-center flex   mt-4">
                 
-                <Link to="/hotels/review" className="link text-blue-500">View Detils</Link>
+                <p onClick={()=>navigateHandle(data.id)} className="link text-blue-500">View Detils</p>
                 <button onClick={bookingPage} className="btn text-white btn-accent">
                 Book Now
                 </button>

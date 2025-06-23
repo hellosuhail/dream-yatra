@@ -8,7 +8,7 @@ import {
   FaSquarespace,
 } from "react-icons/fa6";
 import { GrFormSubtract } from "react-icons/gr";
-import { hotelData } from "./CardData/hotels";
+import { hotelData, hotelFilterData } from "./CardData/hotels";
 import { useNavigate } from "react-router-dom";
 import {
   MdAirportShuttle,
@@ -64,7 +64,10 @@ const HotelSearch = () => {
   const searchRef = useRef(null);
 
   const navigate = useNavigate();
-
+  
+const navigateToReview=(id)=>{
+  navigate(`/hotels/review/${id}`)
+}
   const navigateHandle = () => {
     navigate("/hotels/recommended");
   };
@@ -129,23 +132,23 @@ const HotelSearch = () => {
   };
   return (
     <div>
-      <div className="flex px-12 py-12 w-full  gap-10 mt-8" ref={searchRef}>
+      <div className="md:flex px-12 py-12 w-full  gap-10 mt-8" ref={searchRef}>
         <input
           type="text"
           value={searchTerm}
           onFocus={() => setShowSuggestions(true)}
           onChange={handleChange}
           placeholder="Search places or hotels..."
-          className="w-1/4 border px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="md:w-1/4 w-full mt-2 border px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <input
           type="date"
           placeholder="Search places or hotels..."
-          className="w-1/4 border px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="md:w-1/4 w-full mt-2 border px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <div
           onClick={showHandler}
-          className="flex gap-2 cursor-pointer border-1 items-center border-black pr-18  rounded py-2 px-4"
+          className="flex gap-2 cursor-pointer border-1 mt-2 items-center border-black pr-18  rounded py-2 px-4"
         >
           <IoMdPerson /> 2 travellers, 1 room
         </div>
@@ -197,7 +200,7 @@ const HotelSearch = () => {
             </div>
           </div>
         )}
-        <button className="btn rounded-full text-white bg-blue-600 text-3xl">
+        <button className="btn rounded-full w-full md:w-auto mt-2 text-white bg-blue-600 text-3xl">
           <CiSearch />
         </button>
         {showSuggestions && (
@@ -328,82 +331,39 @@ const HotelSearch = () => {
                 })}
               </div>
             </div>
-            <h1 className="text-lg pt-8 pb-4 font-bold">payment type</h1>
-
-            <div className="flex gap-2 py-2">
+            {hotelFilterData.map((item,index)=>(
+            <div key={index} className="">
+            <h1 className="text-lg pt-8 pb-4 font-bold">{item.title}</h1>
+{item.type.map((data,index)=>(
+            <div key={index} className="flex gap-2 py-2">
               <input type="checkbox" />
-              Reserve now, pay later
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Reserve without a credit card
-            </div>
-            <h1 className="text-lg pt-8 pb-4 font-bold">
-              Property cancellation options
-            </h1>
-
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Fully refundable property
-            </div>
-            <h1 className="text-lg pt-8 pb-4 font-bold">Property type</h1>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Hotel
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Resort
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Apartment
-            </div>
-            <h1 className="text-lg pt-8 pb-4 font-bold">Property brand</h1>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Taj
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Fairfield Inn
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Le Meridien
-            </div>
-            <h1 className="text-lg pt-8 pb-4 font-bold">Traveler experience</h1>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Family friendly
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Beach
-            </div>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
-              Business friendly
-            </div>
-               <h1 className="text-lg pt-8 pb-4 font-bold">Availability</h1>
-            <div className="flex gap-2 py-2">
-              <input type="checkbox" />
+             {data}
+            </div>))}
+           </div>))}
             
-Only show available properties
-            </div>
          
           </div>
         </div>
         <div className="w-full flex flex-col space-y-6 px-4 md:px-8 lg:px-16">
+          <div className="dropdown flex flex-col border-1 w-70 rounded-lg">
+            <label className="text-[10px] font-extrabold">sort by</label>
+  <div tabIndex={0} role="button" className="cursor-pointer m-1 py-0 px-18">Recommended</div>
+  <ul tabIndex={0} className=" absolute left-20 top-10 dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+    <li className=" border-b-1 d border-gray-400"><a>Price: low to high</a></li>
+    <li className=" border-b-1 d border-gray-400" ><a>high to low</a></li>
+    <li className=" border-b-1 d border-gray-400"><a>Guest rating + our choice</a></li>
+    <li className=" border-b-1 d border-gray-400"><a>Distance from city center </a></li>
+  </ul>
+</div>
           {hotelData.map((data, index) => (
             <div
-              key={index}
+              key={data.id}
               className="card bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row max-w-4xl mx-auto hover:shadow-xl transition-shadow duration-300"
             >
               {/* Image section */}
               <figure className="relative md:w-48 md:h-40 flex-shrink-0">
                 <img
-                  onClick={navigateHandle}
+                  onClick={()=>navigateToReview(data.id)}
                   src={data.images[imageIndexes[index]]}
                   alt={`slide-${imageIndexes[index]}`}
                   className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none cursor-pointer"

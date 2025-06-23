@@ -31,6 +31,7 @@ export const slider = [
 ];
 export const hotelData = [
   {
+    id:"1",
     images: [
       "/Images/hotels/noida1.webp",
       "/Images/hotels/noida.webp",
@@ -39,6 +40,7 @@ export const hotelData = [
     ],
     name: "ExpoMart Inn",
     location: "Greater Noida",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     rating: 10,
     placeType:"Ocean view",
     reviews: 17,
@@ -50,6 +52,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"2",
     images: [
       "/Images/hotels/Copenhagen.webp",
       "/Images/hotels/Copenhagen1.jpg",
@@ -61,6 +64,7 @@ export const hotelData = [
     location: "Copenhagen",
     rating: 9.2,
     reviews: 42,
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     place:"Family friendly",
     placetype:"Breakfast included",
     label: "Excellent",
@@ -71,6 +75,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"3",
     images: [
       "/Images/hotels/Aarhus.jpg",
       "/Images/hotels/Aarhus1.jpg",
@@ -80,6 +85,7 @@ export const hotelData = [
 
     name: "Nordic Breeze Hotel",
     location: "Aarhus",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     rating: 8.8,
     place:"Family friendly",
     reviews: 55,
@@ -91,6 +97,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"4",
     images: [
       "/Images/hotels/Odense.jpg",
       "/Images/hotels/Odense1.jpg",
@@ -104,6 +111,7 @@ export const hotelData = [
     reviews: 28,
     placeType:"Ocean view",
     label: "Exceptional",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     originalPrice: 700,
     currentPrice: 595,
     discount: "15% off",
@@ -111,6 +119,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"5",
     images: [
       "/Images/hotels/Esbjerg3.jpg",
       "/Images/hotels/Esbjerg.jpg",
@@ -121,6 +130,7 @@ export const hotelData = [
     name: "Harbor Lights Inn",
     location: "Esbjerg",
     rating: 8.6,
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     reviews: 33,
     label: "Very Good",
     placetype:"Breakfast included",
@@ -131,6 +141,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"6",
     images: [
       "/Images/hotels/Skagen.jpg",
       "/Images/hotels/Skagen1.jpg",
@@ -142,6 +153,7 @@ export const hotelData = [
     location: "Skagen",
     rating: 9.0,
     placeType:"Ocean view",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     reviews: 40,
     label: "Excellent",
     originalPrice: 550,
@@ -151,6 +163,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"7",
     images: [
       "/Images/hotels/Aalborg.jpg",
       "/Images/hotels/Aalborg1.jpg",
@@ -160,6 +173,7 @@ export const hotelData = [
 
     name: "Seaside Comfort Inn",
     location: "Aalborg",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     rating: 8.7,
     reviews: 25,
     label: "Very Good",
@@ -172,6 +186,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"8",
     images: [
       "/Images/hotels/Nuuk.jpg",
       "/Images/hotels/Nuuk1.jpg",
@@ -181,6 +196,7 @@ export const hotelData = [
 
     name: "Aurora Sky Lodge",
     location: "Nuuk",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     rating: 9.8,
     placetype:"Breakfast included",
     reviews: 12,
@@ -192,6 +208,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"9",
     images: [
       "/Images/hotels/Frederiksberg.webp",
       "/Images/hotels/Frederiksberg1.jpg",
@@ -206,12 +223,14 @@ export const hotelData = [
     label: "Good",
     originalPrice: 410,
     placeType:"Ocean view",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     currentPrice: 369,
     discount: "10% off",
     perNight: 185,
     currency: "DKK",
   },
   {
+    id:"10",
     images: [
        "/Images/hotels/noida.webp",
       "/Images/hotels/noida1.webp",
@@ -223,6 +242,7 @@ export const hotelData = [
     location: "Roskilde",
     rating: 8.9,
     reviews: 37,
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     label: "Excellent",
     originalPrice: 630,
     placeType:"Reserve now, pay later",
@@ -232,6 +252,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"11",
     images: [
      "/Images/hotels/noida.webp",
       "/Images/hotels/noida1.webp",
@@ -242,6 +263,7 @@ export const hotelData = [
     name: "The Blue Marina",
     location: "Kolding",
     rating: 9.1,
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     reviews: 21,
     placeType:"Ocean view",
     label: "Excellent",
@@ -252,6 +274,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"12",
     images: [
        "/Images/hotels/noida.webp",
       "/Images/hotels/noida1.webp",
@@ -262,6 +285,7 @@ export const hotelData = [
     name: "Hotel Hygge",
     location: "Helsingør",
     rating: 9.4,
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     reviews: 29,
     label: "Exceptional",
     originalPrice: 690,
@@ -272,6 +296,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"13",
     images: [
      "/Images/hotels/noida.webp",
       "/Images/hotels/noida1.webp",
@@ -284,6 +309,7 @@ export const hotelData = [
     rating: 8.4,
     reviews: 18,
     label: "Very,Good",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     placeType:"Reserve now, pay later",
     originalPrice: 495,
     currentPrice: 420,
@@ -292,6 +318,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"14",
     images: [
  "/Images/hotels/noida.webp",
       "/Images/hotels/noida1.webp",
@@ -302,6 +329,7 @@ export const hotelData = [
     name: "Lakeside Suites",
     location: "Silkeborg",
     rating: 8.9,
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     reviews: 35,
     placeType:"Reserve now, pay later",
     label: "Excellent",
@@ -312,6 +340,7 @@ export const hotelData = [
     currency: "DKK",
   },
   {
+    id:"15",
     images: [
       "/Images/hotels/noida.webp",
       "/Images/hotels/noida1.webp",
@@ -320,6 +349,7 @@ export const hotelData = [
     ],
     name: "Viking Retreat Hotel",
     location: "Randers",
+    compliteLocation:"Plot No. 23-25 & 27-29, Knowledge Park II, Greater Noida, Gautam Budh Nagar, 201306, India",
     rating: 9.3,
     reviews: 26,
     label: "Exceptional",
@@ -331,3 +361,94 @@ export const hotelData = [
     currency: "DKK",
   },
 ];
+
+export const HotelRoomType = [
+  
+  {
+    img:"/Images/hotels/noida3.webp",
+    title:"Villa, 1 King Bed, Sea View (Goan)",
+    text:"Free self parking",
+    textOne:"50 sq m",
+    textThree:"Sleeps 4",
+    textFour:"Special deal",
+    textFive:"1 King Bed",
+    textSix:"Reserve now, pay deposit",
+    textSeven:"Free WiFi",
+    textEight:"Sea view",
+    textNine:"Collect and Redeem",
+    textTen:"Partially refundable",
+    leftRoom:"We have 2 left",
+    price:"68,064"
+  },
+    {
+    img:"/Images/hotels/Aarhus2.jpg",
+      title:"Villa, 1 King Bed, Sea View (Goan)",
+    text:"Free self parking",
+    textOne:"50 sq m",
+    textThree:"Sleeps 4",
+    textFour:"Special deal",
+    textFive:"1 King Bed",
+    textSix:"Reserve now, pay deposit",
+    textSeven:"Free WiFi",
+    textEight:"Sea view",
+    textNine:"Collect and Redeem",
+    textTen:"Partially refundable",
+    leftRoom:"We have 2 left",
+    price:"68,064"
+  },
+]
+
+
+export const hotelFilterData=[
+    {
+    title:"Payment type",
+    type:["Reserve now, pay later","Reserve without a credit card"]
+  
+  },
+  {
+    title:"Property cancellation options",
+    type:["Fully refundable property"]
+  
+  },
+   {
+    title:"Property type",
+    type:["Hotel","Aparthotel","Apartment"]
+  
+  },
+     {
+    title:"Property brand",
+    type:["JW Marriott","Taj","Trident Hotels"]
+  
+  },
+  {
+    title:"Traveler experience",
+    type:["Family friendly","Beach","Business friendly","LGBTQ welcoming"]
+  
+  },
+   {
+    title:"Availability",
+    type:["Only show available properties"],
+  },
+  {
+    title:"Star rating",
+    type:["5 stars","4 stars","3 stars"],
+  },
+  {
+    title:"Meal plans available",
+    type:["Breakfast included","Dinner included","Lunch included","All inclusive"],
+  },
+
+    {
+    title:"Accessibility",
+    type:["Elevator","Wheelchair accessible parking","Service animals allowed"],
+  },
+  
+    {
+    title:"Hotels.com Rewards",
+    type:["VIP Access propertiesA collection of top-rated stays","Member PricesGet instant savings when you're signed in","Discounted propertiesMajor discounts on selected stays"],
+  },
+     {
+    title:"Number of bedrooms",
+    type:["Studio","1","2","3+"],
+  },
+]

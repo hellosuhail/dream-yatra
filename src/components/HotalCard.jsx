@@ -9,7 +9,7 @@ const HotalCard = () => {
     <div className="md:flex justify-between m-12">
     {cardOne.map((item, index) => (
   <div key={index} className="w-full md:w-1/2 lg:w-1/3 p-4 flex justify-center">
-    <Link to="/accommodations" className="w-full">
+    <Link to="/hotels" className="w-full">
       <div className="card card-side flex flex-col md:flex-row text-black bg-amber-100 shadow-md hover:shadow-lg transition-shadow duration-300 w-full h-full">
         
 

@@ -7,11 +7,12 @@ import Suggestionflight from "./Suggestionflight";
 
 const FlightDetails = () => {
   const { flightId } = useParams();
+  console.log(flightId)
   const navigate = useNavigate();
   const flight = useSelector((state) =>
     state.flight.flights.find((f) => f.id === flightId)
   );
-  console.log(flight);
+;
 
   if (!flight) {
     return (
@@ -155,7 +156,7 @@ const FlightDetails = () => {
             {/* Action Buttons */}
             <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 flex flex-col sm:flex-row justify-between gap-2 sm:gap-3 md:gap-4">
               <button
-                onClick={() => navigate("/flight-list")}
+                onClick={() => navigate("/flight")}
                 className="w-full cursor-pointer sm:w-auto flex-1 bg-gray-500 hover:bg-gray-600 text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-lg text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Back to List
