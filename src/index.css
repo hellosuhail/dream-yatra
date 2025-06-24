@@ -7,4 +7,5 @@
 } */
  .bg-img{
   z-index: -10;
+  color: hsl(357, 62%, 57%);
  }

@@ -31,7 +31,7 @@ const Navbar = () => {
     "/":"/Images/img.avif",
     "/packages":"/Images/Maldives.jpg",
     "/hotels":"/Images/hotels/new-york.avif",
-    "/bus":"/Images/sydney.jpg",
+    "/bus":"/Images/bus/bus3.jpg",
     "/cruise":"/Images/Mauritius2.jpg",
   }
   const bgTexts = {

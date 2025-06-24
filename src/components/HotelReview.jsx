@@ -74,7 +74,7 @@ const HotelReview = () => {
   const hotel = hotelData.find((e) => e.id === id);
   console.log("Route param id:", id);
 
-  console.log(hotel);
+ 
 
   const handleShare = async () => {
     if (navigator.share) {

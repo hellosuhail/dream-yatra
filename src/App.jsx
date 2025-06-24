@@ -22,6 +22,7 @@ import Booking from "./components/HotelBooking";
 import HotelReview from "./components/HotelReview";
 import FlightList from "./components/FlightList";
 import FlightDetails from "./components/FlightDetail";
+import BusRouteTimng from "./components/Bus/BusRouteTimng";
 
 
 function Layout() {
@@ -55,6 +56,7 @@ function Layout() {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/flight" element={<FlightList/>}/>
         <Route path="/flight-list/:flightId" element={<FlightDetails/>} />
+        <Route path="/bus/online-booking/:Id" element={<BusRouteTimng/>} />
       </Routes>
       <Footer />
     </>

@@ -21,6 +21,7 @@ import { TbAirConditioning } from "react-icons/tb";
 import { CgGym } from "react-icons/cg";
 import { RiRestaurantLine } from "react-icons/ri";
 import { PiWashingMachine } from "react-icons/pi";
+import { IoCloseSharp } from "react-icons/io5";
 
 const recommendedList = [
   "Bali - Expoinn",
@@ -56,6 +57,7 @@ const HotelSearch = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [activeAmenity, setActiveAmenity] = useState(null);
   const [show, setShow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [counter, setCounters] = useState({ adults: 0, children: 0 });
   const [filteredList, setFilteredList] = useState(recommendedList);
   const [imageIndexes, setImageIndexes] = useState(hotelData.map(() => 0));
@@ -118,6 +120,10 @@ const navigateToReview=(id)=>{
     setShow(!show);
   };
 
+  
+  const sidebarHandler = () => {
+    setIsOpen(!isOpen);
+  };
   const updateCounter = (type, action) => {
     setCounters((prev) => {
       const current = prev[type];
@@ -224,9 +230,17 @@ const navigateToReview=(id)=>{
           </ul>
         )}
       </div>
-
+<button onClick={sidebarHandler}
+        className={`btn md:hidden ml-4 mb-2 btn-accent ${isOpen?"hidden":"bolck "} `}>
+          {isOpen?"" :"Fillter"}
+        </button>
       <div className="flex ">
-        <div className="w-96 bg-base-300 py-12 px-12">
+        
+        <div   className={`w-96 ${isOpen?" absolute z-10":"hidden"}  md:relative bg-base-300 py-12 px-12`}>
+         <button onClick={sidebarHandler}
+        className={`btn md:hidden text-2xl`}>
+          {isOpen?<IoCloseSharp /> :""}
+        </button>
           <h1 className="text-3xl">Fillter by</h1>
           <p className="text-xl py-4">Popular filters</p>
           {placeFilter.map((place, index) => (
@@ -344,7 +358,7 @@ const navigateToReview=(id)=>{
          
           </div>
         </div>
-        <div className="w-full flex flex-col space-y-6 px-4 md:px-8 lg:px-16">
+        <div onClick={sidebarHandler} className="w-full flex flex-col space-y-6 px-4 md:px-8 lg:px-16">
           <div className="dropdown flex flex-col border-1 w-70 rounded-lg">
             <label className="text-[10px] font-extrabold">sort by</label>
   <div tabIndex={0} role="button" className="cursor-pointer m-1 py-0 px-18">Recommended</div>
@@ -358,7 +372,7 @@ const navigateToReview=(id)=>{
           {hotelData.map((data, index) => (
             <div
               key={data.id}
-              className="card bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row max-w-4xl mx-auto hover:shadow-xl transition-shadow duration-300"
+              className="card w-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row max-w-4xl mx-auto hover:shadow-xl transition-shadow duration-300"
             >
               {/* Image section */}
               <figure className="relative md:w-48 md:h-40 flex-shrink-0">
