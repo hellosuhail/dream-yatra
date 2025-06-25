@@ -24,8 +24,8 @@ const handleNext = (index) => {
 };
 
 const navigate =useNavigate()
-const allHotal=()=>{
-    navigate('/hotels/bestdeals')
+const booking=()=>{
+    navigate('/hotels/booking')
 }
 
   return (
@@ -53,7 +53,7 @@ const allHotal=()=>{
           <div key={index} className="card bg-base-100 shadow-md w-80 flex-shrink-0">
          <figure className="relative">
   <img
-  onClick={allHotal}
+  onClick={booking}
     src={data.images[imageIndexes[index]]}
     alt={`slide-${imageIndexes[index]}`}
     className="w-full max-w-xs cursor-pointer md:w-80 md:h-60 object-cover rounded-lg"

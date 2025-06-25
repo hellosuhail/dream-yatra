@@ -32,7 +32,7 @@ const TravelCard = ({data,name}) => {
       >
         {data.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white shadow-2xs w-96  rounded-xl  hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <div className="bg-white shadow-2xs w-[90%] rounded-xl  hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
               <div className="relative overflow-hidden rounded-t-xl group">
                 <img
                   src={item.img}

@@ -52,8 +52,8 @@ const Bus = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }} className="overflow-auto">
-      {/* <Search searchInput={search} />
-      <div className="flex justify-center">
+       <Search searchInput={search} />
+    {/*  <div className="flex justify-center">
         <MidNav initalData={MidNavData} />
       </div>
       <Carousel slides={slides}/>

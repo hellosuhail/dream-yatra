@@ -236,7 +236,7 @@ const navigateToReview=(id)=>{
         </button>
       <div className="flex ">
         
-        <div   className={`w-96 ${isOpen?" absolute z-10":"hidden"}  md:relative bg-base-300 py-12 px-12`}>
+        <div   className={`w-96 ${isOpen?" absolute z-10":"hidden md:block"}  bg-base-300 py-12 px-12`}>
          <button onClick={sidebarHandler}
         className={`btn md:hidden text-2xl`}>
           {isOpen?<IoCloseSharp /> :""}
@@ -358,7 +358,7 @@ const navigateToReview=(id)=>{
          
           </div>
         </div>
-        <div onClick={sidebarHandler} className="w-full flex flex-col space-y-6 px-4 md:px-8 lg:px-16">
+        <div  className="w-full flex flex-col space-y-6 px-4 md:px-8 lg:px-16">
           <div className="dropdown flex flex-col border-1 w-70 rounded-lg">
             <label className="text-[10px] font-extrabold">sort by</label>
   <div tabIndex={0} role="button" className="cursor-pointer m-1 py-0 px-18">Recommended</div>
@@ -377,7 +377,6 @@ const navigateToReview=(id)=>{
               {/* Image section */}
               <figure className="relative md:w-48 md:h-40 flex-shrink-0">
                 <img
-                  onClick={()=>navigateToReview(data.id)}
                   src={data.images[imageIndexes[index]]}
                   alt={`slide-${imageIndexes[index]}`}
                   className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none cursor-pointer"
@@ -401,7 +400,8 @@ const navigateToReview=(id)=>{
               </figure>
 
               {/* Text content section */}
-              <div className="card-body p-6 flex flex-col justify-between md:w-[calc(100%-12rem)] rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
+                 
+              <div  onClick={()=>navigateToReview(data.id)} className="card-body cursor-pointer p-6 flex flex-col justify-between md:w-[calc(100%-12rem)] rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
                 <div>
                   <h2 className="card-title text-xl font-semibold flex items-center space-x-3">
                     <span>{data.name}</span>

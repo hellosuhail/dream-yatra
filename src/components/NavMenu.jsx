@@ -20,10 +20,36 @@ import { PiPhoneCallLight } from "react-icons/pi";
 import { RiContactsLine } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
-import AuthModal from "./Login";
+
 const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef(null);
+   const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const toggleMode = () => {
+    setIsLogin(!isLogin);
+    setFormData({ name: "", email: "", password: "" });
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isLogin) {
+      alert(`Logged in as: ${formData.email}`);
+    } else {
+      alert(`Account created for: ${formData.name}`);
+    }
+    setFormData({ name: "", email: "", password: "" });
+    document.getElementById("my_modal_3").close();
+  };
 
   // Close sidebar on outside click
 
@@ -120,13 +146,15 @@ const NavMenu = () => {
               </ul>
             </aside>
           )}
-          <div className="md:hidden fixed bottom-0 w-full bg-white flex justify-around px-3 py-2 shadow-md">
-            <button className="flex flex-col items-center text-gray-700 hover:text-black">
+
+          {/*small device ke liye bottom navbar */}
+          <div className="md:hidden fixed bottom-0 z-10 w-full bg-white flex justify-around px-3 py-2 shadow-md">
+            <button onClick={()=>document.getElementById('my_modal_3').showModal()}  className="flex flex-col items-center text-gray-700 hover:text-black">
               <VscAccount className="text-xl" />
               <span className="text-xs">Account</span>
             </button>
 
-            <button className="flex flex-col items-center text-gray-700 hover:text-black">
+            <button   onClick={() => document.getElementById("my_modal_2").showModal()} className="flex flex-col items-center text-gray-700 hover:text-black">
               <FiPhoneCall className="text-xl" />
               <span className="text-xs">Call</span>
             </button>
@@ -163,19 +191,18 @@ const NavMenu = () => {
             >
               <li className="flex flex-row items-center space-x-2">
                 <img src="/Images/profile.png" alt="img" className="w-14" />
-                <Link to="/login" className="text-gray-500 p-0">
+                <Link   onClick={()=>document.getElementById('my_modal_3').showModal()} className="text-gray-500 p-0">
                   MY BOOKINGS ›
                 </Link>
               </li>
 
               <li>
-                <AuthModal />
-              </li>
-              <li>
-                <Link className="btn  bg-gray-400 w-30 m-1 h-8 hover:bg-gray-500 text-white">
-                  Sign up
+               <Link  onClick={()=>document.getElementById('my_modal_3').showModal()} className="btn  bg-gray-400 w-30 m-1 h-8 hover:bg-gray-500 text-white">
+                  login
                 </Link>
+            
               </li>
+            
             </ul>
           </div>
           <div className="dropdown dropdown-bottom dropdown-center">
@@ -214,7 +241,7 @@ const NavMenu = () => {
           </div>
           <button
             onClick={() => document.getElementById("my_modal_2").showModal()}
-            className="bg-black/50 absolute md:relative right-6 top-8 md:top-0 md:right-0  hover:bg-black/70 text-white px-4 py-4 md:py-1.5 md:not-visited:rounded-2xl rounded-4xl  md:flex items-center text-sm transition"
+            className="bg-black/50 absolute z-10 md:relative right-6 top-8 md:top-0 md:right-0  hover:bg-black/70 text-white px-4 py-4 md:py-1.5 md:not-visited:rounded-2xl rounded-4xl  md:flex items-center text-sm transition"
           >
             <PiPhoneCallLight className="md:text-lg md:mr-2 text-xl " />
             <span className="hidden md:flex"> Call Us</span>
@@ -246,6 +273,69 @@ const NavMenu = () => {
           <button>close</button>
         </form>
       </dialog>
+      
+      {/*Login Modal */}
+
+       <div className="z-10 absolute w-full">
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+
+          <h3 className="font-bold text-lg text-center mb-4">
+            {isLogin ? "Login to Your Account" : "Create an Account"}
+          </h3>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {!isLogin && (
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="input input-bordered w-full"
+              />
+            )}
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="input input-bordered w-full"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="input input-bordered w-full"
+            />
+            <button type="submit" className="btn btn-accent text-white w-full">
+              {isLogin ? "Login" : "Sign Up"}
+            </button>
+          </form>
+
+          <p className="text-center mt-4">
+            {isLogin ? "Don't have an account?" : "Already have an account?"}
+            <button
+              onClick={toggleMode}
+              className="ml-2 text-blue-600 hover:underline"
+            >
+              {isLogin ? "Sign Up" : "Login"}
+            </button>
+          </p>
+        </div>
+      </dialog>
+    </div>
     </div>
   );
 };

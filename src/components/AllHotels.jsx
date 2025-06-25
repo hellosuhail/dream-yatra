@@ -114,7 +114,7 @@ const AllHotels = () => {
 
               <div className="card-actions justify-between items-center flex   mt-4">
                 
-                <p onClick={()=>navigateHandle(data.id)} className="link text-blue-500">View Detils</p>
+                <p onClick={()=>navigateHandle(data.id)} className="link text-blue-500">View Details</p>
                 <button onClick={bookingPage} className="btn text-white btn-accent">
                 Book Now
                 </button>

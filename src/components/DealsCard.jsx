@@ -49,7 +49,7 @@ const DealsCard = () => {
 
   return (
     <div className="w-full max-w-screen-lg mx-auto py-10 px-4 relative">
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden relative w-full">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{
@@ -92,13 +92,13 @@ const DealsCard = () => {
         {/* Navigation Buttons */}
         <button
           onClick={prev}
-          className="btn btn-circle bg-white shadow-md hover:shadow-xl absolute left-2 top-1/2 transform -translate-y-1/2 z-20"
+          className="btn btn-circle bg-white shadow-md hover:shadow-xl absolute  left-2 md:left-4 md:top-60 top-1/2 transform -translate-y-1/2 z-20"
         >
           ‹
         </button>
         <button
           onClick={next}
-          className="btn btn-circle bg-white shadow-md hover:shadow-xl absolute right-2 top-1/2 transform -translate-y-1/2 z-20"
+          className="btn btn-circle bg-white shadow-md hover:shadow-xl absolute right-2 md:right-45 md:top-60 top-1/2 transform -translate-y-1/2 z-20"
         >
           ›
         </button>

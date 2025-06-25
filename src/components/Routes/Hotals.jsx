@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 import Search from "../Search";
 import HotalCard from "../HotalCard";
 import Carousel from "../Carousel";
@@ -42,7 +43,11 @@ const Hotals = () => {
 
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }} className="overflow-auto"
+    >
       <Search searchInput={search} />
       <HotalCard/>
       <div className="px-8 flex w-full justify-between ">
@@ -71,7 +76,7 @@ const Hotals = () => {
 
 
       
-    </div>
+    </motion.div>
   );
 };
 

@@ -8,6 +8,7 @@ const Booking = () => {
   const [children, setChildren] = useState(0);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("UPI");
 
   const pricePerNight = 3200;
   const nights =
@@ -19,22 +20,34 @@ const Booking = () => {
       : 1;
   const total = pricePerNight * nights;
 
+  const handleBooking = () => {
+    if (!checkIn || !checkOut) {
+      alert("Please select valid check-in and check-out dates.");
+      return;
+    }
+    alert(`Booking Confirmed!\nGuests: ${adults + children}\nPayment Method: ${paymentMethod}\nTotal: ₹${total}`);
+    // Reset state (optional)
+    setCheckIn("");
+    setCheckOut("");
+    setAdults(2);
+    setChildren(0);
+    setPaymentMethod("UPI");
+  };
+
   return (
-    <> <div className="bg-sky-600 h-12 flex items-center px-10 text-white text-sm font-medium shadow">
-          <span className="mr-2">Dreamviewer Yatra</span> /
-          <span className="ml-2">Contact Us</span>
-        </div><div className="w-full mb-6 px-12 py-8 flex justify-start">
-          <Link
-            to="/hotels"
-            className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800"
-          >
-            <GoArrowLeft className="text-xl" />
-            Back
-          </Link>
-        </div>
+    <>
+      <div className="bg-sky-600 h-12 flex items-center px-10 text-white text-sm font-medium shadow">
+        <span className="mr-2">Dreamviewer Yatra</span> / <span className="ml-2">Contact Us</span>
+      </div>
+      <div className="w-full mb-6 px-12 py-8 flex justify-start">
+        <Link
+          to="/hotels"
+          className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800"
+        >
+          <GoArrowLeft className="text-xl" /> Back
+        </Link>
+      </div>
       <div className="max-w-4xl mx-auto px-4 py-10">
-       
-        
         {/* Hotel Overview */}
         <div className="bg-white shadow rounded-lg p-6 mb-8">
           <h1 className="text-2xl font-bold mb-2">Hotel Paradise Residency</h1>
@@ -97,6 +110,26 @@ const Booking = () => {
                 />
               </div>
             </div>
+
+          
+            <div>
+              <label className="block font-medium mb-2">Payment Method</label>
+              <div className="flex gap-4 flex-wrap">
+                {['UPI', 'Credit Card', 'Debit Card', 'Net Banking'].map((method) => (
+                  <label key={method} className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="payment"
+                      value={method}
+                      checked={paymentMethod === method}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
+                      className="radio radio-accent"
+                    />
+                    {method}
+                  </label>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Right Side: Summary */}
@@ -120,7 +153,10 @@ const Booking = () => {
                 <MdCurrencyRupee /> {total.toLocaleString("en-IN")}
               </p>
             </div>
-            <button className="btn btn-accent text-white w-full mt-6 py-2 rounded-lg">
+            <button
+              onClick={handleBooking}
+              className="btn btn-accent text-white w-full mt-6 py-2 rounded-lg"
+            >
               Book Now
             </button>
           </div>

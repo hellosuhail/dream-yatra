@@ -517,9 +517,9 @@ const HotelReview = () => {
           <HotelsDeals />
         </div>
       </div>
-      <div className="md:flex md:px-36">
+      <div className="md:flex px-12 md:px-36">
         <p className="px-12 font-bold text-2xl">At a glance</p>
-        <div className="flex gap-10 ">
+        <div className="md:flex gap-10 ">
           <div className=" flex flex-col">
             {atAGlance.map((data, index) => (
               <div key={index} className="w-70 m-2">
