@@ -183,9 +183,10 @@ const goToOffers=()=>{
    <div className="py-6 px-4 md:px-12 bg-white">
   
   <div className="mb-6 border-b border-gray-300 pb-2">
+ 
     <h2 className="text-2xl font-bold text-gray-800">Government Buses</h2>
   </div>
-
+   <div className="md:block absolute hidden top-390 left-180 w-72 h-72 bg-gradient-to-br from-green-200 to-[#b53aca] rounded-full opacity-30 pointer-events-none"></div>
   
   <div
     className="
@@ -287,13 +288,13 @@ const goToOffers=()=>{
   </div>
 </div>
     <div className="py-8 px-4 md:px-16 bg-gray-50 relative overflow-hidden">
-  {/* Decorative Background Shape */}
+  
   <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-to-br from-green-200 to-green-400 rounded-full opacity-30 pointer-events-none"></div>
 
-  {/* Header */}
-  <div className="mb-8 text-center">
+
+  <div className="mb-8 ">
     <h2 className="text-3xl font-extrabold text-gray-800">Testimonials</h2>
-    <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+    <p className="text-gray-600 mt-2 max-w-xl">
       Hear from our satisfied customers in their own words
     </p>
   </div>

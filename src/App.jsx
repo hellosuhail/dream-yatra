@@ -26,6 +26,10 @@ import BusList from "./components/Bus/BusList";
 import Viewseat from "./components/Bus/Viewseat";
 import Passenger from "./components/Bus/Passenger";
 import OfferTrems from "./components/Bus/OfferTrems";
+import ViewDate from "./components/Cruise/ViewDate";
+import BookingCruise from "./components/Cruise/BookingCruise";
+import PartySize from "./components/Cruise/PartySize";
+import SelectRoom from "./components/Cruise/SelectRoom";
 
 
 function Layout() {
@@ -50,6 +54,10 @@ function Layout() {
         <Route path="/bus/fillter/viewseat/:viewId" element={<Viewseat/>}/>
         <Route path="/bus/fillter/viewseat/passenger" element={<Passenger/>}/>
         <Route path="/cruise" element={<Cruise />} />
+        <Route path="/cruise/date" element={<ViewDate />} />
+        <Route path="/cruise/date/room-configuration" element={<PartySize/>}/>
+        <Route path="/cruise/date/room-configuration/select-room" element={<SelectRoom/>}/>
+        <Route path="/cruise/date/booking" element={<BookingCruise/>} />
         <Route path="/giftcard" element={<GiftCard/>}/>
         <Route path="/hotels/bestdeals" element={<AllHotels/>}/>
         <Route path="/hotels/recommended" element={<HotelSearch/>}/>
