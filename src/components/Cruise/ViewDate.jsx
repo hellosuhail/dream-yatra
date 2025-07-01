@@ -1,17 +1,33 @@
 // ViewDate.jsx
 import React, { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { listData } from "../CardData/CruiseData";
+import { GoArrowLeft } from "react-icons/go";
 
 
 
 const ViewDate = () => {
   const [date, setDate] = useState(listData[0]);
   const navigate = useNavigate();
-
+console.log(date)
   return (
     <div className="min-h-screen bg-gray-50">
+            <div className="bg-sky-600 h-12 flex items-center px-10 text-white text-sm font-medium shadow">
+        <span className="mr-2">Dreamviewer Yatra</span> /
+        <span className="ml-2">Contact Us</span>
+      </div>
+
+      {/* Back button */}
+      <div className="w-full m-6 flex justify-start">
+        <Link
+          to="/cruise"
+          className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800"
+        >
+          <GoArrowLeft className="text-xl" />
+          Back
+        </Link>
+      </div>
       <div className="bg-white shadow-md px-10 py-6 flex flex-wrap justify-between gap-4">
         <div>
           <p className="text-sm text-gray-500">Departure Date</p>

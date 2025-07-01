@@ -75,17 +75,17 @@ const Cruise = () => {
             alt=""
             className="w-full h-80 rounded-lg mt-4"
           />
-          <Carousel slides={slides} />\
-          <p className="px-12 pb-4 border-b-1 border-gray-400">
+          <Carousel slides={slides} />
+          <p className="md:px-12 pb-4 border-b-1 border-gray-400">
             Get ready to set sail on magical vacations full of new discoveries,
             adventures and cultures, with exciting destinations across Alaska,
             the Caribbean, Europe, Southeast Asia, Australia and New Zealand!
           </p>
-          <div className="my-10 full">
+          <div className="md:my-10 full">
             {cardData.map((data) => (
               <div
                 key={data.id}
-                className="card m-4 hover:shadow-2xl card-side bg-base-100 shadow-lg"
+                className="block md:flex  card  md:m-4 hover:shadow-2xl card-side bg-base-100 shadow-lg"
               >
                 <figure>
                   <img

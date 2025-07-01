@@ -42,7 +42,7 @@ function Layout() {
   return (
     <>
       {!shouldHideNavbar && <Navbar />}
-      {/* <WelcomeAnimation/> */}
+      <WelcomeAnimation/>
       <Routes>
         <Route path="/" element={<Flight />} />
         <Route path="/packages" element={<Pakages />} />

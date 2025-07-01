@@ -1,6 +1,7 @@
 // RoomSelector.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { GoArrowLeft } from "react-icons/go";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const rooms = [
   {
@@ -28,22 +29,45 @@ const rooms = [
   },
 ];
 
-const RoomSelector = ({ onSelect }) => {
+const RoomSelector =  ({ onSelect }) => {
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const itinerary = location.state?.selected
+
 
   const handleSelect = (room) => {
     setSelectedRoom(room);
     if (onSelect) onSelect(room);
   };
-  const navigate = useNavigate()
-
-  const goTOBooking = ()=>{
-    navigate('/cruise/date/booking')
-  }
+  console.log(selectedRoom)
+  // const navigate = useNavigate()
+  const goTOBooking = () => {
+    if (itinerary) {
+      navigate("/cruise/date/booking", { state: { selected: itinerary } }); // 👈 pass it along
+    } else {
+      alert("Itinerary data not found!");
+    }
+  };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg w-full max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center text-blue-700">Select Your Room Type</h2>
+            <div className="bg-sky-600 h-12 flex items-center px-10 text-white text-sm font-medium shadow">
+        <span className="mr-2">Dreamviewer Yatra</span> /
+        <span className="ml-2">Contact Us</span>
+      </div>
+
+      {/* Back button */}
+      <div className="w-full m-6 flex justify-start">
+        <Link
+          to="/cruise/date"
+          className="flex items-center gap-2 text-base sm:text-lg text-sky-600 hover:text-sky-800"
+        >
+          <GoArrowLeft className="text-xl" />
+          Back
+        </Link>
+      </div>
+      <h2 className="text-3xl font-bold mb-6 text-center text-sky-600">Select Your Room Type</h2>
       <div className="space-y-6">
         {rooms.map((room) => (
           <div
@@ -62,11 +86,11 @@ const RoomSelector = ({ onSelect }) => {
                 className="w-full md:w-48 h-36 object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
               />
               <div className="flex-1 p-4">
-                <h3 className="text-xl font-semibold text-blue-800">{room.name}</h3>
+                <h3 className="text-xl font-semibold text-sky-600">{room.name}</h3>
                 <p className="text-gray-600 mt-1">{room.description}</p>
               </div>
               <div className="pr-6 text-right">
-                <p className="text-lg font-bold text-blue-700">₹{room.price}</p>
+                <p className="text-lg font-bold text-sky-600">₹{room.price}</p>
               </div>
             </div>
           </div>
@@ -82,7 +106,7 @@ const RoomSelector = ({ onSelect }) => {
       )}
 
       <div className="w-full mt-12">
-        <button onClick={goTOBooking} className="btn w-full btn-outline btn-accent"> Continue</button>
+        <button onClick={goTOBooking} className="btn w-full btn-outline text-white  bg-sky-600 hover:text-sky-800"> Continue</button>
       </div>
     </div>
   );
