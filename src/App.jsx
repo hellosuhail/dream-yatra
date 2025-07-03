@@ -35,7 +35,7 @@ import SelectRoom from "./components/Cruise/SelectRoom";
 function Layout() {
   const location = useLocation();
   const hideNavbarOnRoutes = ["/deals","/giftcard","/bus/Offers-terms","/offers&deals","/bus/fillter/viewseat/passenger","/hotels/deals","/hotels/bestdeals","/contact","/hotels/recommended","/hotels/booking"];
-  const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
+  const shouldHideNavbar = location.pathname.startsWith(hideNavbarOnRoutes);
 
 
   
